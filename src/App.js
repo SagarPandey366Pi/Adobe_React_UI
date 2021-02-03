@@ -5,6 +5,10 @@ import './custom.css';
 import SearchField from "react-search-field";
 import MultiSelect from "react-multi-select-component";
 
+import Tabs, { TabPane } from 'rc-tabs';
+import {Nav, Navbar} from 'react-bootstrap/Navbar';
+import Button from 'react-bootstrap';
+
 import { MenuItems } from './MenuItems';
 import { ProductsItems } from './ProductsItems';
 import { ViewByProduct } from './ViewByProduct';
@@ -38,59 +42,26 @@ function App() {
 
   return (
     <div className="App">
+      <div>
+        <a id="gnav_12" href="https://exchange.adobe.com/" className="logo" daa-ll="Logo">
+          <span className="logo-image" style={{float: 'left', paddingLeft: '300px', paddingTop: '50px'}}>
+            <img src="https://www.adobe.com/content/dam/cc/icons/Adobe_Corporate_Horizontal_Red_HEX.svg" className="App-logo" alt="Adobe" />
+          </span>
+          <span className="logo-text" style={{ float: "left", paddingLeft: '10px', paddingTop: '50px'}}>
+            Adobe Exchange
+          </span>
+        </a>      
+        <Tabs defaultActiveKey="2" tabPosition="top" style={{display: 'inline-block', paddingTop: '50px'}}>
+          <TabPane tab="Creative Cloud" key="1">
+          </TabPane>
+          <TabPane tab="Experience Cloud" key="2" style={{float: 'left'}}>
+          </TabPane>
+          <TabPane tab="Document Cloud" key="3">
+          </TabPane>
+        </Tabs>
 
-      <div className="header-wrapper">
-        <div id="header">
-          <div className="topNav">
-            <span className="adobeWrapper"></span>
-            <header id="topNavheader" className="navBarWrapper">
-              <nav className="navBar">
-                <div id="nav2" className="navList-wrapper">
-                  <ul className="navList">
-                    <li id="gnav_2_0" className="navList-item">
-                      <div id="gnav_4" className="navList-wrapper">
-                        <ul className="navList">
-                          <li className="navList-item relativePosition" id="gnav_4_0">
-                            <div id="gnav_6" className="navList-wrapper">
-                              <ul className="navList">
-                                <li id="gnav_6_0" className="navList-item">
-                                  <div id="gnav_9" className="navList-wrapper">
-                                    <ul className="navList">
-                                      <li id="gnav_9_0" className="navList-item">
-                                        <a id="gnav_12" href="https://exchange.adobe.com/" className="logo" daa-ll="Logo">
-                                          <span className="logo-image">
-                                            <img src="https://www.adobe.com/content/dam/cc/icons/Adobe_Corporate_Horizontal_Red_HEX.svg" className="App-logo" alt="Adobe" />
-                                          </span>
-                                          <span className="logo-text">
-                                            Adobe Exchange
-                                            </span>
-                                        </a>
-                                      </li>
-                                      {MenuItems.map((item, index) => {
-                                        return (
-                                          <li key={index}>
-                                            <a className={item.cName} href={item.url} >
-                                              {item.title}
-                                            </a>
-                                          </li>
-                                        )
-                                      })}
-                                    </ul>
-                                  </div>
-                                </li>
-                              </ul>
-                            </div>
-                          </li>
-                        </ul>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-              </nav>
-            </header>
-          </div>
-        </div>
       </div>
+
       <br /><br /><br />
       <Carousel breakPoints={breakPoints}>
         <div className="product-item-car ib">

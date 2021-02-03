@@ -6,7 +6,9 @@
   height: 25px;
   pointer-events: none;
 }
-
+.feds-header-wrapper {
+  position: relative;
+}
 /* @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
